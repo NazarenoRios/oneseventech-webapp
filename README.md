@@ -10,6 +10,12 @@ $ npm install --global yarn
 $ yarn install
 ```
 
+## Setup
+
+```bash
+$ Use example.env as a guide (copying and pasting the same data)
+```
+
 ## Running the app
 
 ```bash
