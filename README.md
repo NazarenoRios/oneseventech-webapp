@@ -1,3 +1,9 @@
+## Pre-Installation
+
+```bash
+$ npm install --global yarn
+```
+
 ## Installation
 
 ```bash
