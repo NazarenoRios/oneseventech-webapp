@@ -3,6 +3,7 @@ import ProductCard from './ProductCard'
 import { getProducts } from 'services/product.service'
 import displayToast from 'utils/toast.utility'
 import { useFetchAndLoad } from 'hooks'
+import Loading from 'common/Loading'
 
 const ProductList = () => {
   const { loading, callEndpoint } = useFetchAndLoad()
@@ -55,10 +56,14 @@ const ProductList = () => {
   useEffect(() => {
     const sortedProducts = sortProductsHandler([...products])
     setProducts(sortedProducts)
-  }, [sort]) // Trigger sorting only when sort changes
+  }, [sort])
 
   if (loading) {
-    return <div>Cargando..</div>
+    return (
+      <div className='flex items-center justify-center'>
+        <Loading />
+      </div>
+    )
   }
 
   return (
@@ -101,7 +106,7 @@ const ProductList = () => {
         {products.length > 0 ? (
           products.map((product, i) => <ProductCard key={i} product={product} />)
         ) : (
-          <div>No se encontraron productos</div>
+          <div>No products found</div>
         )}
       </div>
     </>

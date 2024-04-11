@@ -29,5 +29,5 @@ export const addProductToCart = (product: Product) => {
 
   localStorage.setItem('cart', JSON.stringify(cart))
 
-  displayToast('Producto agregar al carrito', 'success')
+  displayToast('Product added to cart', 'success')
 }
